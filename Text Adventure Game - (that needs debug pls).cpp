@@ -36,7 +36,7 @@ void loading()
 class user
 {
     private:
-    int berserker=100, invi = 1000,inv=1000;
+    int berserker=100, invi = 200,inv=200;
 
     public:
     int power=35, health=100,armor=25;
@@ -448,7 +448,7 @@ int Story(int level, string player_name, string gen, string gend)
         }
     }else if (level == 6)           //Level 6
     {
-       string a="Go for a solo instant kill cause you are mad as f*ck!",b="throw him the anti matter grenade",c="attack with Dr Ido",d="";
+       string a="Go for a solo instant kill cause you are mad!",b="throw him the anti matter grenade",c="attack with Dr Ido",d="do the triple backflip and Panzer Kunst's martial arts!";
        enemy.weapon = "Desty machine pistol";
         do
         {
@@ -458,7 +458,7 @@ int Story(int level, string player_name, string gen, string gend)
             if ( sel == 1)
             {
                 enemy.name ="Nova";
-                cout <<player_name<<": Haaaaaaaiaaaaa!"; 
+                cout <<player_name<<": This fight is between you and me!"<<endl; 
                 Sleep(300);
 
             }else if ((sel == 2) || (sel ==3))
@@ -469,7 +469,7 @@ int Story(int level, string player_name, string gen, string gend)
             }else if (sel==4)
             {
                 enemy.name ="Nova";
-                cout <<player_name<<": ";
+                cout <<player_name<<": Haaaaaaaiaaaaa!";
                 Sleep(300);
             }
             enemy.Nova();
@@ -494,12 +494,12 @@ int main()
     string answ="",player_name,gend,gen;
     do
     {
-        n=0;
-        cout << "\t\t\t\t Game_Name \n\n 1.Start Game \n 2.Credits \n 3. Exit \n > ";
+        n=6;
+        cout << "\t\t\t\t A.B.A. Text Adventure \n\n 1.Start Game \n 2.Credits \n 3. Exit \n > ";
         cin >> x;
         if (x==2)
         {
-            cout << " Game_Name \n Based on: Alita Battle Angel \n Software used: Visual Studio \n Code in C++ \n Date: Thursday March 31 \n Year: 2022"<<endl;
+            cout << " A.B.A. Text Adventure \n Based on: Alita Battle Angel \n Software used: Visual Studio \n Code in C++ \n Date: Thursday March 31 \n Year: 2022"<<endl;
             system("pause");
             system("CLS");
         }else if (x==1)
@@ -510,6 +510,7 @@ int main()
             {
                 do
                 {
+                
                     cout << "Do you want to play as a 'male' or a 'female' character?: ";
                     cin >> gend;
                     system("CLS");
@@ -524,7 +525,7 @@ int main()
                         gend="girl";
                         break;
                     }
-                }while((gend!="male") || (gend!="Male") || (gend!="MALE") || (gend!="1") || (gend!="female")||(gend!="Female") || (gend!="FEMALE") || (gend!="2"));
+                }while((gend!= "male") || (gend!="Male") || (gend!="MALE") || (gend!="female") || (gend!="Female") || (gend!="FEMALE") || (gend!="1") || (gend!="2"));
                 do
                 {
                     if ((n>=0) && (n<=6))
@@ -547,24 +548,20 @@ int main()
                             {
                                 cout << "Select Level from '0-6'\n >";      //select level
                                 cin >> n;
-                                
                             }else if (answ=="n")
                             {
                                 x=0;
-                                n=-10;
+                                //n=0;
                                 system("CLS");
                                 break;
                             } 
-                        }while(answ!="y");
+                        }while((answ!="y") || (answ!="n"));
                     }
-                    if (n<=-5)
-                    {
-                        break;
-                    }
-                }while((n>=0) && (n<=6));
+                    break;
+                }while((n>=0) || (n<=6));
                 gend="";
                 break;
-            }while((gend!= "male") || (gend!="Male") || (gend!="MALE") || (gend!="female") || (gend!="Female") || (gend!="FEMALE") || (gend!="1") || (gend!="2"));
+            }while((n<0) && (n>6));
         }else if(x==3)
         {
             break;
