@@ -135,12 +135,6 @@ int fight (string ename, string pname, int pdamage,int edamage,int php,int ehp,i
                        php += tmp;
                    }
                 }
-                if(pshield < 0)            // #DELETE ME
-                {
-                    tmp = pshield;
-                    pshield = 0;
-                    php += tmp;
-                }
                 if (eshield <= 0)
                 {
                     ehp -= pdamage;
@@ -514,20 +508,23 @@ int main()
             cin >> player_name;
             do
             {
-                cout << "Do you want to play as a 'male' or a 'female' character?: ";
-                cin >> gend;
-                system("CLS");
-                if ((gend=="male")||(gend=="Male") || (gend=="MALE") || (gend=="1"))
+                do
                 {
-                    gen="he";
-                    gend="boy";
-                    
-                }else if ((gend=="female")||(gend=="Female") || (gend=="FEMALE") || (gend=="2"))
-                {
-                    gen="she";
-                    gend="girl";
-                    
-                }
+                    cout << "Do you want to play as a 'male' or a 'female' character?: ";
+                    cin >> gend;
+                    system("CLS");
+                    if ((gend=="male")||(gend=="Male") || (gend=="MALE") || (gend=="1"))
+                    {
+                        gen="he";
+                        gend="boy";
+                        break;
+                    }else if ((gend=="female")||(gend=="Female") || (gend=="FEMALE") || (gend=="2"))
+                    {
+                        gen="she";
+                        gend="girl";
+                        break;
+                    }
+                }while((gend!="male") || (gend!="Male") || (gend!="MALE") || (gend!="1") || (gend!="female")||(gend!="Female") || (gend!="FEMALE") || (gend!="2"));
                 do
                 {
                     if ((n>=0) && (n<=6))
@@ -555,10 +552,6 @@ int main()
                             {
                                 x=0;
                                 n=-10;
-                                /*cout << "▁▁▁▁▁▁▁▁▁▁▁▁▁▁"<<char(219) <<char(219)<< char(219) << char(219) << char(219) << char(219)<<"▁▁▁▁"<< char(219) << char(219)<<"▁▁▁▁▁▁" << char(219) << char(219)<<"▁▁▁▁" <<char(219) << char(219) << char(219) << char(219) << char(219) << char(219) <<"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁" << char(219) << char(219) <<"▁▁▁▁▁▁▁▁"<< char(219) << char(219) << char(219) << char(219) << "▁▁▁▁"<<char(219) << char(219) <<"▁▁▁▁" << char(219) << char(219) <<"▁▁▁▁" char(219) << char(219) <<"▁▁▁▁▁▁▁▁▁▁▁▁▁▁"<<endl;
-                                cout << "▁▁▁▁▁▁▁▁▁▁▁▁▁▁" <<char(219)  << char(219) << char(219) << char(219) << char(219) << char(219) <<"▁▁▁▁"<< char(219) << char(219) <<"▁▁"<< char(219) << char(219) <<"▁▁"<< char(219) << char(219) <<"▁▁▁▁"<< char(219) << char(219) <<"▁▁▁▁"<<char(219) << char(219) <<"▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁"<< char(219) << char(219) <<"▁▁▁▁▁▁▁▁"<< char(219) << char(219) <<"▁▁▁▁"<< char(219) << char(219) << char(219) << char(219) <<"▁▁▁▁"<<char(219) <<char(219) <<"▁▁▁▁"<<char(219) <<char(219) <<"▁▁▁▁▁▁▁▁▁▁▁▁▁▁"<<endl;
-                                cout <<"▁▁▁▁▁▁▁▁▁▁▁▁▁▁"<< char(219) << char(219) << char(219) << char(219) << char(219) << char(219) <<"▁▁▁▁"<< char(219) << char(219) <<"▁▁▁▁▁▁"<< char(219) << char(219) <<"▁▁▁▁"<<char(219) << char(219) << char(219) << char(219) << char(219) << char(219) <<"▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁"<<endl;
-                                Sleep(5000);*/
                                 system("CLS");
                                 break;
                             } 
