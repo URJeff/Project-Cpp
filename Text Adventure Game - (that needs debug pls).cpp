@@ -226,7 +226,7 @@ int Story(int level, string player_name, string gen, string gend)
         for(int l=0; ch[l]; l++)
         {
             cout << ch[l];
-            //Sleep(20);
+            Sleep(20);
         }
         cout <<"\n-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"<<endl;
         system("pause");
@@ -500,7 +500,7 @@ int main()
     string answ="",player_name,gend,gen;
     do
     {
-        n=3;
+        n=0;
         cout << "\t\t\t\t Game_Name \n\n 1.Start Game \n 2.Credits \n 3. Exit \n > ";
         cin >> x;
         if (x==2)
